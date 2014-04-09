@@ -21,7 +21,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from deepin_utils.file import touch_file_dir
+
+def touch_file_dir(filepath):
+    d = os.path.dirname(filepath)
+    if not os.path.exists(d):
+        os.makedirs(d)
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
