@@ -44,8 +44,8 @@ for theme_dir_name in DIRS:
             print "components/%s/%s/thumbnail.png: 缺少缩略图" % (theme_dir_name, theme)
 
         if os.path.exists(old_preview_png) and os.path.exists(old_thumbnail_png):
-            new_preview_path = os.path.join("preview", theme_dir_name, theme, "preview.png")
-            new_thumbnail_path = os.path.join("thumbnail", theme_dir_name, theme, "thumbnail.png")
+            new_preview_path = os.path.join("preview", theme_dir_name, theme+ "-preview.png")
+            new_thumbnail_path = os.path.join("thumbnail", theme_dir_name, theme+ "-thumbnail.png")
             touch_file_dir(new_preview_path)
             os.system("cp %s %s" % (old_preview_png, new_preview_path))
             touch_file_dir(new_thumbnail_path)
